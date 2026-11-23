@@ -383,3 +383,50 @@ body::after{background:linear-gradient(180deg,rgba(13,8,30,.52),rgba(17,9,35,.3)
   .idol-copy>span:last-child,.book-copy>span:last-child{font-size:10px}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}body::before{animation:none}}
+
+
+/* FIX: keep cover/portrait columns separate from their text on every viewport. */
+.book-card,
+.idol-card{
+  box-sizing:border-box;
+  grid-template-columns: minmax(0, 88px) minmax(0, 1fr);
+  column-gap:16px;
+  overflow:hidden;
+}
+.book-card > img,
+.idol-card > img{
+  box-sizing:border-box;
+  display:block;
+  width:100%;
+  max-width:100%;
+  min-width:0;
+  justify-self:start;
+}
+.book-card > .book-copy,
+.idol-card > .idol-copy{
+  width:100%;
+  min-width:0;
+  max-width:100%;
+  overflow-wrap:anywhere;
+}
+.book-copy b,
+.idol-copy b,
+.book-copy span,
+.idol-copy span{
+  max-width:100%;
+  overflow-wrap:anywhere;
+}
+@media (min-width:560px){
+  .book-card{grid-template-columns:minmax(0,84px) minmax(0,1fr);column-gap:14px}
+  .idol-card{grid-template-columns:minmax(0,76px) minmax(0,1fr);column-gap:13px}
+  .book-card > img{height:126px}
+  .idol-card > img{height:94px}
+}
+@media (min-width:820px){
+  .book-card{grid-template-columns:minmax(0,88px) minmax(0,1fr)}
+  .idol-card{grid-template-columns:minmax(0,80px) minmax(0,1fr)}
+}
+@media (max-width:420px){
+  .book-card{grid-template-columns:minmax(0,76px) minmax(0,1fr);column-gap:11px}
+  .idol-card{grid-template-columns:minmax(0,68px) minmax(0,1fr);column-gap:10px}
+}
