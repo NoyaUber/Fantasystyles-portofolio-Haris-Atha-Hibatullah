@@ -391,7 +391,7 @@ body::after{background:linear-gradient(180deg,rgba(13,8,30,.52),rgba(17,9,35,.3)
    - Lebar kolom gambar dikunci lewat variabel (--cover-w / --idol-w)
    - Tinggi gambar dihitung dari rasio, bukan dari ukuran asli file
    - Gambar tidak boleh melar (flex/grid shrink dimatikan)
-   - Ada jarak tetap (column-gap) antara gambar dan teks
+   - Ada jarak tetap (column-gap) yang LEBIH LEGA antara gambar dan teks
    ========================================================= */
 .book-grid .book-card,
 .idol-grid .idol-card{
@@ -399,7 +399,7 @@ body::after{background:linear-gradient(180deg,rgba(13,8,30,.52),rgba(17,9,35,.3)
   --cover-ratio:2/3;
   display:grid;
   grid-template-columns:var(--cover-w) minmax(0,1fr);
-  column-gap:18px;
+  column-gap:24px;
   align-items:center;
   box-sizing:border-box;
   padding:14px;
@@ -427,7 +427,7 @@ body::after{background:linear-gradient(180deg,rgba(13,8,30,.52),rgba(17,9,35,.3)
 .idol-grid .idol-card > .idol-copy{
   min-width:0;
   width:100%;
-  padding-left:2px;
+  padding-left:4px;
   gap:6px;
 }
 .book-grid .book-copy b,
@@ -440,15 +440,15 @@ body::after{background:linear-gradient(180deg,rgba(13,8,30,.52),rgba(17,9,35,.3)
 }
 
 @media (min-width:560px) and (max-width:819px){
-  .book-grid .book-card{--cover-w:76px;column-gap:14px;padding:12px}
-  .idol-grid .idol-card{--cover-w:72px;column-gap:14px;padding:12px}
+  .book-grid .book-card{--cover-w:76px;column-gap:16px;padding:12px}
+  .idol-grid .idol-card{--cover-w:72px;column-gap:16px;padding:12px}
 }
 @media (min-width:820px){
-  .book-grid .book-card{--cover-w:96px;column-gap:20px;padding:16px}
-  .idol-grid .idol-card{--cover-w:84px;column-gap:18px;padding:16px}
+  .book-grid .book-card{--cover-w:96px;column-gap:28px;padding:16px}
+  .idol-grid .idol-card{--cover-w:84px;column-gap:24px;padding:16px}
 }
 @media (max-width:420px){
-  .book-grid .book-card{--cover-w:72px;column-gap:12px;padding:10px}
-  .idol-grid .idol-card{--cover-w:66px;column-gap:12px;padding:10px}
+  .book-grid .book-card{--cover-w:72px;column-gap:14px;padding:10px}
+  .idol-grid .idol-card{--cover-w:66px;column-gap:14px;padding:10px}
   .book-grid .book-copy b,.idol-grid .idol-copy b{font-size:10px}
 }
